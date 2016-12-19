@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
 #机器学习
+import numpy as pd
+import pandas as pd
+import sklearn
 def GBDT_Classification(inputTable,FeatureColNames,LabelColName,GroupColName=columns,metricType='NDCG',treeNum=500,learnRate=0.05,trainSampleRatio=0.6,trainFeaRatio=0.6,maxLeafNum=32,testDataRatio=0,maxDeep=10,leafLeastSampleNum=500,randomSeed=0,maxSplitNum=500,**kwargs):
     """inputTableName:必选，输入数据集
     FeatureColName:必选，选择特征列，支持double,bigint
@@ -82,7 +85,9 @@ def Logistic_Multi_Classification(inputTable,trainFeaColNames,targetCol,regular=
     return outputModel
         
 #随机森林
-def RandomForest(inputTable,labelColName,weightColName=None,featureColName=colNames,excludedColNames=None,forceCategorical=None,treeNum=100,algorithmTypes=None,randomColNum=log2N,minNumObj=2,minNumPer=0,maxTreeDeep=∞,maxRecorSize=100000):
+def randomForest(inputTable,labelColName,weightColName=None,featureColName=colNames,
+                 excludedColNames=None,forceCategorical=None,treeNum=100,algorithmTypes=None,
+                 randomColNum=log2N,minNumObj=2,minNumPer=0,maxTreeDeep=∞,maxRecorSize=100000):
     """inputTableName:必选，输入表
     labelColName:必选，输入的标签列列名
     weightColName:可选，权重列，默认为空
@@ -97,7 +102,14 @@ def RandomForest(inputTable,labelColName,weightColName=None,featureColName=colNa
     maxTreeDeep:可选，单棵树的最大深度，默认为无穷
     maxRecorSize:可选，单棵树输入的随机数据个数，(1000,1000000]，默认为100000
     """
-    return outputModel
+
+    return RandomForest(...)
+
+class RandomForest:
+    def __init__(self, inputTable,labelColName,weightColName=None,featureColName=colNames,
+                 excludedColNames=None,forceCategorical=None,treeNum=100,algorithmTypes=None,
+                 randomColNum=log2N,minNumObj=2,minNumPer=0,maxTreeDeep=∞,maxRecorSize=100000):
+        self.randomForest =
 
 #朴素贝叶斯
 def NaiveBayes(inputTable,labelColName,featureColNames=colNames,excludedColNames=None,forceCategorical=None):
